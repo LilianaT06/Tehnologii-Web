@@ -1,12 +1,25 @@
 import Card from 'antd/lib/card'
 import{ Button, Input } from 'antd'
-import { useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 
 export const CardCustom = ({title,description, }: {title:string, description:string}) =>{
     
 const [ inputValue, setInputValue] = useState('')
-console.log('>>inputValue', inputValue)
+
+ 
+useEffect(() =>{
+    console.log(">>useEffect")
+
+    return () => {
+        console.log(">>UseCount")
+    }
+},[])
+
+
+
+
+
 
 const showValueInAlert = ()=>{
     alert(inputValue)
