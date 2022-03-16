@@ -1,9 +1,9 @@
-import { Breadcrumb, Layout} from 'antd'
+import { Breadcrumb} from 'antd'
 import { Content } from 'antd/lib/layout/layout'
 import { CardCustom } from './CardCustom'
 import { CustomForm } from '../components/CustomForm/CustomForm'
 
-const {Header} = Layout
+
 const information = [
 {
      id: 1,
@@ -22,7 +22,7 @@ const information = [
 },
 {
     id: 4,
-    title: 'Crad 4',
+    title: 'Card 4',
     description: 'Some more text'
 }]
 

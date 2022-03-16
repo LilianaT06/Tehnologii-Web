@@ -1,5 +1,4 @@
 import { Form,Input, InputNumber, Button } from "antd";
-import { resolve } from "path/win32";
 import { useState } from "react";
 
 
@@ -7,6 +6,10 @@ export function CustomForm(){
     const [ name, setName] = useState('')
     const [ age, setAge] = useState(0)
     const [ intro, setIntro] = useState('')
+    const [ inputValue, setInputValue] = useState('')
+    const showValueInAlert = ()=>{
+        alert(inputValue)
+    } 
 
     const  subMit = (e: any) => {
         const res = {
@@ -17,6 +20,7 @@ export function CustomForm(){
         console.log(">>res",res)
     }
     return (
+         
         <Form name="nest-messages" >
       <Form.Item
         name={['user', 'name']}
@@ -50,7 +54,7 @@ export function CustomForm(){
         <Input.TextArea value={intro} onChange={(e) => setIntro(e.target.value)}/>
       </Form.Item>
       <Form.Item >
-        <Button type="primary" onClick={subMit}>
+        <Button type="primary" onClick = {showValueInAlert}>
           Submit
         </Button>
       </Form.Item>
