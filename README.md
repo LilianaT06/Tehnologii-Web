@@ -1,3 +1,7 @@
+laborator 4 
+<<<<<<< lab_4
+# tehnologii-web
+=======
 Laboratorul 3 
 <<<<<<< lab_3
 # Getting Started with Create React App
@@ -48,4 +52,5 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 To learn React, check out the [React documentation](https://reactjs.org/).
 =======
 # tehnologii-web
+>>>>>>> main
 >>>>>>> main
