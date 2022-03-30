@@ -1,36 +1,18 @@
-import { Breadcrumb} from 'antd'
-import { Content } from 'antd/lib/layout/layout'
+import { Breadcrumb, Layout} from 'antd'
+import  { Content } from 'antd/lib/layout/layout'
+import { useStaticRendering } from 'mobx-react-lite'
+import { useRootStore } from '..'
 import { CardCustom } from './CardCustom'
-import { CustomForm } from '../components/CustomForm/CustomForm'
+//import { CardCustom } from './CardCustom'
+//import { CustomForm } from '../components/CustomForm/CustomForm'
+import { Row } from 'antd'
+import { IContentModel } from '../interfaces/interfaces'
 
-
-const information = [
-{
-     id: 1,
-     title: 'Card 1',
-     description: 'Some more text'
-},
-{ id: 2,
-    title: 'Card 2',
-    description: 'Some more text'
-
-},
-{
-    id: 3,
-    title: 'Card 3',
-    description: 'Some more text'
-},
-{
-    id: 4,
-    title: 'Card 4',
-    description: 'Some more text'
-}]
-
+const { Footer } = Layout
 
 export const ContentLayout = () => {
-
-
-
+    const {contents} = useRootStore()
+    console.log('>>root_store', contents)
     
     return (
 <>
@@ -45,26 +27,19 @@ export const ContentLayout = () => {
 
         <div   className="site-layout-content">
 
-
-
-            {information.map((el,index)=>{
-                return(
-                    <CardCustom key={el.id}  title={ el.title } description={ el.description}  />
+        <Row gutter={16}>
+            {contents.map((content: IContentModel) => {
+                return (
+                    <CardCustom key={content.id} content={content}/>
                 )
-            })
-
-        
-        }
-      <br></br>
-      <br></br>
-
-          <CustomForm/>
-        <div>
-
-        </div>
+                
+                 })}
+                  </Row>
+      
 
         </div>
         </Content>
+        <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
         </>
     )
 
