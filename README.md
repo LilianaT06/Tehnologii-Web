@@ -1,8 +1,17 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 Laboratorul 3 
 <<<<<<< lab_3
 >>>>>>> 93608d299396ed80671812f50b32394ca19c8fb5
+=======
+laborator 4 
+<<<<<<< lab_4
+# tehnologii-web
+=======
+Laboratorul 3 
+<<<<<<< lab_3
+>>>>>>> 3854d3bec94f1c87c0fcb7dda3a491d88477d1b0
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -50,8 +59,15 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 =======
 # tehnologii-web
 >>>>>>> main
 >>>>>>> 93608d299396ed80671812f50b32394ca19c8fb5
+=======
+=======
+# tehnologii-web
+>>>>>>> main
+>>>>>>> main
+>>>>>>> 3854d3bec94f1c87c0fcb7dda3a491d88477d1b0
