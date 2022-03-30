@@ -1,6 +1,6 @@
 import { Breadcrumb, Layout} from 'antd'
 import  { Content } from 'antd/lib/layout/layout'
-import { useStaticRendering } from 'mobx-react-lite'
+//import { useStaticRendering } from 'mobx-react-lite'
 import { useRootStore } from '..'
 import { CardCustom } from './CardCustom'
 //import { CardCustom } from './CardCustom'
@@ -30,9 +30,7 @@ export const ContentLayout = () => {
         <Row gutter={16}>
             {contents.map((content: IContentModel) => {
                 return (
-                    <CardCustom key={content.id} content={content}/>
-                )
-                
+                    <CardCustom key={content.id} content={content}/>)
                  })}
                   </Row>
       

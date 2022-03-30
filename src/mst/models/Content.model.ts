@@ -22,5 +22,8 @@ notes: ''
 .actions((self)=> ({
 changeNotes(value:string){
     self.notes = value
+},
+changeSeen(state:boolean){
+    self.seen = state
 }
 }))
