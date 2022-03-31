@@ -1,11 +1,15 @@
-import { values } from 'mobx'
 import {types} from 'mobx-state-tree'
 import { ContentModel } from '../models/Content.model'
 
 
 const RootStore = types.model('RootStore', {
-       contents: types.array(ContentModel)})
+       contents: types.array(ContentModel),
 
+       content_notes: types.array(types.safeReference(ContentModel))
+           
+})
+       
+       
 .actions(() => ({
        setDataToLocalStorage(any = {}){
               localStorage.setItem('initialState','string')
@@ -17,8 +21,23 @@ const RootStore = types.model('RootStore', {
        },
        removeLocalStorage(string = 'initialState'){
               localStorage.removeItem('')
-              console.log('>>$() was removed')
-       }
+              console.log('>>$ {} was removed')
+       } 
 }))
+
+.actions((self) => ({
+       
+       setInitialStorageContents(){
+              self.setDataToLocalStorage(self.contents)
+       },
+
+       addNote(id:string){
+              self.content_notes.push()
+       }
+
+}))
+
+
+
 
 export default RootStore

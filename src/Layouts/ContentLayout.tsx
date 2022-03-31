@@ -1,6 +1,5 @@
-import { Breadcrumb, Layout} from 'antd'
+import { Breadcrumb, Layout, List} from 'antd'
 import  { Content } from 'antd/lib/layout/layout'
-//import { useStaticRendering } from 'mobx-react-lite'
 import { useRootStore } from '..'
 import { CardCustom } from './CardCustom'
 //import { CardCustom } from './CardCustom'
@@ -11,7 +10,7 @@ import { IContentModel } from '../interfaces/interfaces'
 const { Footer } = Layout
 
 export const ContentLayout = () => {
-    const {contents} = useRootStore()
+    const {contents,contents_notes,Note} = useRootStore()
     console.log('>>root_store', contents)
     
     return (
@@ -33,9 +32,20 @@ export const ContentLayout = () => {
                     <CardCustom key={content.id} content={content}/>)
                  })}
                   </Row>
-      
 
         </div>
+        <div>
+            <List
+            itemLayout='horizontal'
+            dataSource={ contents_notes}
+            renderItem ={ (content:any) => (
+                <List.Item>
+                <Note content = { content}/>
+                </List.Item>
+            )}
+            />
+                      
+                      </div>
         </Content>
         <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
         </>

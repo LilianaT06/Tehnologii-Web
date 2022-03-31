@@ -13,10 +13,11 @@ const rootStore = useRootStore()
 
 
 useEffect(()=>{
-  rootStore.setDataToLocalStorage()
-  rootStore.getDataFromLocalStorage()
+  rootStore.setInitialStorageContents()
+ // rootStore.setDataToLocalStorage()
+ // rootStore.getDataFromLocalStorage()
 //  rootStore.removeLocalStore()
-}, [])
+})
 
   return (
     <>
