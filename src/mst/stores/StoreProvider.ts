@@ -33,7 +33,7 @@ const storeProvider = RootStore.create( {
            title: 'Card 4',
            description: 'Some more text',
            seen: false,
-           notes: 'four'
+           notes: 'Simply text'
         
        },
 
@@ -42,9 +42,33 @@ const storeProvider = RootStore.create( {
         title: 'Card 5',
         description: 'Some more text',
         seen: true,
-        notes: ''
+        notes: 'Simply text'
   
-         }
+         },
+         {
+            id: '6',
+            title: 'Card 6',
+            description: 'Some more text',
+            seen: true,
+            notes: ''
+      
+             },
+             {
+                id: '7',
+                title: 'Card 7',
+                description: 'Some more text',
+                seen: true,
+                notes: ''
+          
+                 },
+                 {
+                    id: '8',
+                    title: 'Card 8',
+                    description: 'Some more text',
+                    seen: true,
+                    notes: 'Simply text'
+              
+                     }
     ]
 })
 
