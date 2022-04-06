@@ -1,5 +1,9 @@
+ lab5_2
+import { Button, Checkbox } from 'antd'
+
 
 import { Checkbox } from 'antd'
+ main
 import Card from 'antd/lib/card'
 import { observer } from 'mobx-react-lite'
 //import { useEffect } from 'react'
@@ -9,10 +13,12 @@ import { observer } from 'mobx-react-lite'
 import { IContentModel } from '../interfaces/interfaces'
 
 
+
+
 export const CardCustom = observer( ({content}: {content: IContentModel}) =>{
 
 
-    const { title, description,notes, changeNotes, changeSeen, isSeen} = content
+    const { title, description,notes, changeNotes, changeSeen, isSeen, addNote} = content
     
 
 import Card from 'antd/lib/card'
@@ -54,6 +60,10 @@ const showValueInAlert = ()=>{
              onChange={(e) => changeNotes(e.target.value)}/>
 
              <Checkbox value={isSeen} onChange={(e)=>changeSeen(e.target.value)}/>
+        
+        <Button onClick={addNote}>Add Notes</Button>
+
+
         </Card>
     )
 }
