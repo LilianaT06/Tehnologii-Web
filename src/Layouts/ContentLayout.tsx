@@ -1,3 +1,20 @@
+
+import { Breadcrumb, Layout} from 'antd'
+import  { Content } from 'antd/lib/layout/layout'
+//import { useStaticRendering } from 'mobx-react-lite'
+import { useRootStore } from '..'
+import { CardCustom } from './CardCustom'
+//import { CardCustom } from './CardCustom'
+//import { CustomForm } from '../components/CustomForm/CustomForm'
+import { Row } from 'antd'
+import { IContentModel } from '../interfaces/interfaces'
+
+const { Footer } = Layout
+
+export const ContentLayout = () => {
+    const {contents} = useRootStore()
+    console.log('>>root_store', contents)
+
 import { Breadcrumb} from 'antd'
 import { Content } from 'antd/lib/layout/layout'
 import { CardCustom } from './CardCustom'
@@ -30,7 +47,7 @@ const information = [
 export const ContentLayout = () => {
 
 
-
+main
     
     return (
 <>
@@ -44,6 +61,19 @@ export const ContentLayout = () => {
         </Breadcrumb>
 
         <div   className="site-layout-content">
+
+
+        <Row gutter={16}>
+            {contents.map((content: IContentModel) => {
+                return (
+                    <CardCustom key={content.id} content={content}/>)
+                 })}
+                  </Row>
+      
+
+        </div>
+        </Content>
+        <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
 
 
 
@@ -65,6 +95,7 @@ export const ContentLayout = () => {
 
         </div>
         </Content>
+ main
         </>
     )
 
