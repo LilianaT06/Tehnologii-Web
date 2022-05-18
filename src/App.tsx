@@ -1,4 +1,7 @@
 import React, { useEffect } from 'react'
+import { BrowserRouter, Route, Routes} from 'react-router-dom'
+import Login from './login'
+import { useAuthContext } from './hooks/useAuth'
 import './App.css'
 
 
@@ -11,22 +14,38 @@ function App() {
 
 const rootStore = useRootStore()
 
-
+const { isLogined } = useAuthContext()
 useEffect(()=>{
   rootStore.setInitialStorageContents()
  // rootStore.setDataToLocalStorage()
  // rootStore.getDataFromLocalStorage()
 //  rootStore.removeLocalStore()
 })
-
-  return (
-    <>
-    <Layout className='layout'>
+const Panel = () => {
+  return(
+  <Layout className='layout'>
     <HeaderLayout/>
     <ContentLayout/>
-    </Layout>
-   </>
+  </Layout>
+  )
+}
 
+
+  return (
+    <BrowserRouter>
+       <Routes>
+        
+         {
+           !isLogined ?         
+          
+              <Route path="/" element={<Login/>} />
+           :   
+              <Route path="/panel" element={<Panel/>}/>
+          
+         }
+       
+       </Routes>
+    </BrowserRouter>
   );
 }
 
